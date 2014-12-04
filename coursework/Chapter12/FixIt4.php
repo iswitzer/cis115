@@ -1,27 +1,28 @@
+<!DOCTYPE html>
 <!--Author:
 	Date:
 	File:	  FixIt4.php
-	Purpose:  What's wrong here? The new starting wage is not calculated
-			  correctly.  Can you fix it?
-			  Hint: the problem is NOT in this program, it is in the
-			  getStartingWage() function in the incWageFunctions.php
-			  file.
+	Purpose:  The gamePlayers array stores the characters of four game 
+	players, using the player names as keys. The application is supposed 
+	to display Christine's character but it displays nothing. 
+	Can you fix this code?
 -->
 
 <html>
 <head>
-	<title>Wage Report</title>
+	<title>GAME CHARACTERS</title>
 	<link rel ="stylesheet" type="text/css" href="sample.css" >
 </head>
 <body>
-	<h1>WAGE REPORT</h1>
+	<h1>GAME CHARACTERS</h1>
 
 	<?php
-		include("incWageFunctions.php");
+		$gamePlayers['Bob'] = "human";
+		$gamePlayers['Mary'] = "dragon";
+		$gamePlayers['Christine'] = "wizard";
+		$gamePlayers['Joe'] = "dwarf";
 
-		$startingWage = getStartingWage();
-
-		print("<p>Your starting wage is $$startingWage.</p>");
+		print("<p>Christine is a ".$gamePlayers['wizard']."</p>");
 	?>
 </body>
 </html>

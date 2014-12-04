@@ -1,34 +1,29 @@
+<!DOCTYPE html>
 <!--Author:
 	Date:
 	File:	  FixIt5.php
-	Purpose:  What's wrong here? The getWage() function is
-			  supposed to calculate overtime (time and a half) for
-			  any hours worked above 40. The function is working
-			  just fine but when we send the $hoursWorked
-			  and $hourlyWage from THIS program the function does
-			  not calculate the overtime as time and a half!
-			  Can you fix it? The wage should be $605.63 not $573.75
+	Purpose:  What's wrong here? We want to use an associative array to store 
+	our quarterly sale, using the name of each quarter ('quarter1', 'quarter2', 
+	etc) as keys and the sale amounts (175, 320, 270, 390) as the values stored 
+	in each element. The program runs but the total is 0. What have we done wrong!
 -->
 
 <html>
 <head>
-	<title>Wage Report</title>
+	<title>Car Sales</title>
 	<link rel ="stylesheet" type="text/css" href="sample.css" >
 </head>
 <body>
-	<h1>WAGE REPORT</h1>
+	<h1>CAR SALES</h1>
 
 	<?php
-
-		include("incWageFunctions.php");
-
-		$hourlyWage = 12.75;
-		$hoursWorked = 45;
-		$wage = getWage($hoursWorked, $hourlyWage);
-
-		print("<p>Your hourly wage is $$hourlyWage and you worked
-		$hoursWorked hours.</p>");
-		print("<p>Your wages are $$wage.</p>");
+		$carsSold['175'] = 'quarter1';
+		$carsSold['320'] = 'quarter2';
+		$carsSold['270'] = 'quarter3';
+		$carsSold['390'] = 'quarter4';
+		
+		$totalSales = $carsSold['175'] + $carsSold['320'] + $carsSold['270'] + $carsSold['390'];
+		print("<p>This year we sold $totalSales cars.</p>");
 	?>
 </body>
 </html>

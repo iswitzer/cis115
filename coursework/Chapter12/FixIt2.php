@@ -1,31 +1,28 @@
+<!DOCTYPE html>
 <!--Author:
 	Date:
 	File:	  FixIt2.php
-	Purpose:  What's wrong here? The getWage() function is
-			  one of the functions provided in a file named
-			  incWageFunctions.php. This program uses the getWage()
-			  function but this generates an error message.
-			  Can you fix it?
+	Purpose:  The gameScores array stores four game scores, using 
+	the player names as keys. When we try to print Mary's score 
+	we get 0. What's wrong here?
 -->
 
 <html>
 <head>
-	<title>Wage Report</title>
+	<title>GAME SCORES</title>
 	<link rel ="stylesheet" type="text/css" href="sample.css" >
 </head>
 <body>
-	<h1>WAGE REPORT</h1>
+	<h1>GAME SCORES</h1>
 
 	<?php
-		$hourlyWage = 12.75;
-		$hoursWorked = 45;
-		$wage = getWage($hourlyWage, $hoursWorked);
+		$gameScores['Bob'] = 75;
+		$gameScores['Mary'] = 25;
+		$gameScores['Christine'] = 125;
+		$gameScores['Joe'] = 80;
 
-		include("incWageFunctions.php");
+		print("<p>Mary's score is ".$gameScores['mary']."</p>");
 
-		print("<p>Your hourly wage is $$hourlyWage and you worked
-		$hoursWorked hours.</p>");
-		print("<p>Your wages are $ $wage.</p>");
 	?>
 </body>
 </html>

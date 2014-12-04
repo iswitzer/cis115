@@ -1,53 +1,35 @@
+<!DOCTYPE html>
 <!--Author:
 	Date:
 	File:	Modify1.php
 	Purpose:Chapter 12 Exercise
 
-	Modify1.html asks the user to submit their hours worked and pay rate.
-	The current version of Modify1.php updates the hourly wage to 8.00
-	if it is less than 8.00, then calculates the weekly pay and a bonus,
-	and displays the results. The program does this without using any
-	functions.
+	This applications displays a table containing a game player's name,
+	game character, and score. Modify this code so that it first creates
+	an associative array named $playerInfo and stores the values "Christine",
+	"Wizard", and 345 into elements named 'name', 'character', and 'score'.
 
-	Change Modify1.php so that it uses the setMinimumWage(), getWage() and
-	getBonus() functions that are provided in the incWageFunctions.php file
-	instead of performing these calculations directly.Note that your program
-	becomes much simpler.
+	Now modify the print statement so that it uses the $playerInfo array to 
+	obtain the values for the second column of each row.
 
+	Modify1.html does not need to be changed.
 -->
 <html>
 <head>
-	<title>Modify1</title>
+	<title>Modify Exercise</title>
 	<link rel ="stylesheet" type="text/css" href="sample.css" >
 </head>
 <body>
-
-	<h1>Modify1</h1>
+	<h1>PLAYER REPORT</h1>
 
 	<?php
+	
+		print ("<table>");
+		print("<tr><td>Player Name</td><td>Christine</td></tr>");
+		print("<tr><td>Player Character</td><td>Wizard</td></tr>");
+		print("<tr><td>Player Score</td><td>345</td></tr>");
+		print ("</table>");
 
-		$hoursWorked = $_POST['hoursWorked'];
-		$hourlyWage = $_POST['hourlyWage'];
-
-		if ($hourlyWage < 8.00)
-			$hourlyWage = 8.00;
-
-		if ($hoursWorked <= 40)
-			$wage = $hourlyWage * $hoursWorked;
-		else
-			$wage = ($hourlyWage * 40) + ($hourlyWage * 1.5 * ($hoursWorked - 40));
-
-		if ($wage > 200)
-			$bonus = 75.00;
-		else
-			$bonus = 50.00;
-
-
-		print("<p>Your hourly wage is $$hourlyWage and you worked
-		$hoursWorked hours.</p>");
-		print("<p>Your wages are $$wage.</p>");
-		print("<p>Your bonus is $$bonus.</p>");
 	?>
-
 </body>
 </html>

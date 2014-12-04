@@ -1,44 +1,34 @@
+<!DOCTYPE html>
 <!--Author:
 	Date:
 	File:	Modify2.php
 	Purpose:Chapter 12 Exercise
 
-	Modify2.html provides a Submit button to display a table of
-	pay increases. The current version of Modify2.php uses a for loop
-	to display pay increases of people earning between $8.00 and $25.00
-	an hour. It calculates the pay increases directly without using
-	functions.
-
-	Change Modify2.php so that it uses the getNewHourlyWage() function
-	that is provided in the incWageFunctions.php file instead of
-	performing this calculation directly.
-	Be sure to add the required include statement!
-	
-
+	The accounts array stores balances for your checking, savings, and money market accounts. 
+	The index values for the array (0, 1 and 2) are not very meaningful. Change the program 
+	to use an associative array, with key values 'checking', 'savings', and 'moneyMarket'.
+	Be sure to apply your changes as needed throughout the program! 
+	You do not to change Modify2.html which just runs the program.
 -->
 <html>
 <head>
-	<title>Modify2</title>
+	<title>Modify Exercise</title>
 	<link rel ="stylesheet" type="text/css" href="sample.css" >
 </head>
 <body>
-
-	<h1>Modify2</h1>
+	<h1>MY ACCOUNTS</h1>
 
 	<?php
+		$account[0] = 775.57;
+		$account[1] = 2275.31;
+		$account[2] = 4554.43;
 
-		$payIncrease = 0.10;
-		print ("<table border = \"1\">");
-		print ("<tr><td><strong>Current Pay Rate</strong></td>
-					<td><strong>New Pay Rate</strong></td></tr>");
+		print ("<table>");
+		print("<tr><td>CHECKING BALANCE: </td><td>$".number_format($account[0], 2)."</td></tr>");
+		print("<tr><td>SAVINGS BALANCE: </td><td>$".number_format($account[1], 2)."</td></tr>");
+		print("<tr><td>MONEY MKT BALANCE: </td><td>$".number_format($account[2], 2)."</td></tr>");
+		print ("</table>");
 
-		for ($hourlyWage = 8.00; $hourlyWage < 25.00; $hourlyWage = $hourlyWage + 1)
-		{
-			$newHourlyWage = $hourlyWage + $hourlyWage * $payIncrease;
-			print("<tr><td>$$hourlyWage</td><td>$$newHourlyWage</td></tr>");
-		}
-		print ("</table");
 	?>
-
 </body>
 </html>
